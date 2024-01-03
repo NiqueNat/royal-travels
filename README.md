@@ -1,10 +1,14 @@
 # royal-travels
 Project 2. UI-UX Royal Travels 
 
-![image](https://github.com/NiqueNat/royal-travels/assets/70446500/042d64bc-947e-46ee-ac08-fd1fe206d271)
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/0b167220-b7f3-4f26-acfe-d627aba2d9c9)
 
-![image](https://github.com/NiqueNat/royal-travels/assets/70446500/a31f03dc-baf0-4ee8-9b48-47b52ead26e7)
 
-![image](https://github.com/NiqueNat/royal-travels/assets/70446500/6d05accd-0416-40fb-b335-5061c0edee40)
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/a44ac2d5-84da-495c-92f3-e27e7fa4d985)
 
-![image](https://github.com/NiqueNat/royal-travels/assets/70446500/9ba3886d-714a-493b-a714-37cb16c2907d)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/c51ceb54-2191-4618-878a-c773e555c71f)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/28464415-c8a3-48c7-845d-ecb1ee07fae0)
+
+
