@@ -1,6 +1,12 @@
 # royal-travels
 Project 2. UI-UX Royal Travels 
 
+
+
+
+
+
+
 ## Database Structure
 
 The database for this project is:
