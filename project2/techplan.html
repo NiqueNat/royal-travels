@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Travells Tech-Plan (Backend)</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section class="tech-plan">
+        <div>
+            <h1>Tech Plan (Backend)</h1>
+            <div class="div">
+                <h1>Database Schema (Physical Model) Article:</h1>
+                <h2>Users Table:</h2>
+                <ul>
+                    <li>UserID (Primary Key, Auto Increment)</li>
+                    <li>Email (VARCHAR)</li>
+                    <li>Password (PWDHASH)</li>
+                    <li>Category (VARCHAR) - Possible values: 'Admin' or 'Client'</li>
+                </ul>
+                <h2>Bookings Table:</h2>
+                <ul>
+                    <li>BookingID (Primary Key, Auto Increment)</li>
+                    <li>UserID (Foreign Key referencing Users table)</li>
+                    <li>PackageID (Int)</li>
+                </ul>
+                <h2>Hotels Table:</h2>
+                <ul>
+                    <li>HotelID (Primary Key, Auto Increment)</li>
+                    <li>HotelName (VARCHAR)</li>
+                    <li>HotelLocation (Int)</li>
+                </ul>
+                <h2>Packages Table:</h2>
+                <ul>
+                    <li>PackageID (Primary Key, Auto Increment)</li>
+                    <li>UserID (Foreign Key referencing Users table)</li>
+                    <li>BookingID (Int)</li>
+                </ul>
+                <p>Relationships between tables:</p>
+                <ul>
+                    <li>The Bookings,The Packages and The Packages table has a foreign key linking the tables</li>
+                </ul>
+            </div>
+            <div>
+                <h2>PHP Pseudocode Article:</h2>
+                <h3>User Authentication Pseudocode:</h3>
+                <ol>
+                    <li>Receive email and password from the login form.</li>
+                    <li>Validate and sanitize input.</li>
+                    <li>Query the database to retrieve the user with the given email.</li>
+                    <li>Verify the password against the stored hashed password.</li>
+                    <li>If authentication is successful, redirect to the appropriate dashboard.</li>
+                    <li>If authentication fails, display an error message.</li>
+                </ol>
+                <h3>Booking Process Pseudocode:</h3>
+                <ol>
+                    <li>Receive UserID, PackageID, and other booking details from the booking form.</li>
+                    <li>Validate and sanitize input.</li>
+                    <li>Insert a new record into the Bookings table with the provided details.</li>
+                    <li>Update relevant records in other tables (e.g., decrement available slots in the Packages table).
+                    </li>
+                    <li>Display a confirmation message to the user.</li>
+                </ol>
+                <h3>Retrieve User Bookings Pseudocode:</h3>
+                <ol>
+                    <li>Receive UserID.</li>
+                    <li>Query the database to retrieve all bookings associated with the user.</li>
+                    <li>Display the list of bookings on the user's dashboard.</li>
+                </ol>
+
+                <h3>File Structure:</h3>
+                <ul>
+                    <li>project-root/
+                        <ul>
+                            <li>includes/
+                                <ul>
+                                    <li>db.php</li>
+                                    <li>functions.php</li>
+                                </ul>
+                            </li>
+                            <li>admin/
+                                <ul>
+                                    <li>dashboard.php</li>
+                                    <li>manage_content.php</li>
+                                    <li>...</li>
+                                </ul>
+                            </li>
+                            <li>user/
+                                <ul>
+                                    <li>dashboard.php</li>
+                                    <li>book_package.php</li>
+                                    <li>view_bookings.php</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
