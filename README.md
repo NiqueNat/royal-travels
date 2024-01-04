@@ -89,6 +89,9 @@ Currently, the total price for a booking is not being calculated correctly. This
 
 I'm not confident that the Packages table is set up correctly. This could also be due to the use of test data. I'm reviewing the structure of the Packages table to ensure it meets the requirements of the application.
 
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/26dfce29-12a3-426d-83f4-c70f905f6edd)
+
+
 ![image](https://github.com/NiqueNat/royal-travels/assets/70446500/a44ac2d5-84da-495c-92f3-e27e7fa4d985)
 
 
