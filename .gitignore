@@ -1,0 +1,17 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore PHPStorm project files
+.idea/
+
+# Ignore composer vendor directory
+/vendor/
+
+# Ignore environment variables
+.env
+
+project2/database_queries.sql
+project2/packages.php
+project2/txt.txt
+project2/php/db.php
