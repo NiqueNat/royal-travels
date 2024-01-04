@@ -1,6 +1,6 @@
 
 
-# royal-travels
+# Royal Travels
 Project 2. UI-UX Royal Travels 
 
 ## Database Structure
