@@ -101,3 +101,5 @@ I'm not confident that the Packages table is set up correctly. This could also b
 ![image](https://github.com/NiqueNat/royal-travels/assets/70446500/73a8cbba-a680-4d1f-8315-cd635dcc2dfc)
 
 ![image](https://github.com/NiqueNat/royal-travels/assets/70446500/0b167220-b7f3-4f26-acfe-d627aba2d9c9)
+
+
