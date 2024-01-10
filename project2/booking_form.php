@@ -10,10 +10,7 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'Tourist') {
 }
 
 // Fetch available packages and hotels from the database
-$host = "localhost:3306";
-$dbname = "Royal_Travels";
-$username = "myrna223";
-$dbPassword = "yz#2V7p22";
+
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);

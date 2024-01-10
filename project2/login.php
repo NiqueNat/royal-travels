@@ -7,10 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $userType = isset($_POST['userType']) ? $_POST['userType'] : '';
 
-    $host = "localhost:3306";
-    $dbname = "Royal_Travels";
-    $username = "myrna223";
-    $dbPassword = "yz#2V7p22";
+   
 
     try {
         $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);

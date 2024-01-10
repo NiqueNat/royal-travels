@@ -20,10 +20,6 @@ if (!isset($_SESSION['user_type'])) {
 }
 
 // Fetch and display hotel and package information
-$host = "localhost:3306";
-$dbname = "Royal_Travels";
-$username = "myrna223";
-$dbPassword = "yz#2V7p22";
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);

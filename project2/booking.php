@@ -12,10 +12,7 @@ if (isset($_POST['name'])) {
     $checkoutDate = strip_tags($_POST['checkout']);
     $totalPrice = strip_tags($_POST['totalPrice']);
 
-    $host = "localhost:3306";
-    $dbname = "Royal_Travels";
-    $username = "myrna223";
-    $dbPassword = "yz#2V7p22";
+
 
     try {
         $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);
