@@ -10,6 +10,7 @@ if (isset($_POST['name'])) {
     $packageID = strip_tags($_POST['package']); 
     $checkinDate = strip_tags($_POST['checkin']);
     $checkoutDate = strip_tags($_POST['checkout']);
+    $totalPrice = strip_tags($_POST['totalPrice']);
 
     $host = "localhost:3306";
     $dbname = "Royal_Travels";
@@ -20,8 +21,8 @@ if (isset($_POST['name'])) {
         $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);
 
         // Insert booking information into the 'Bookings' table
-        $stmt = $db->prepare('INSERT INTO Bookings (UserID, PackageID, CheckinDate, CheckoutDate) VALUES (?, ?, ?, ?)');
-        $stmt->execute([$userID, $packageID, $checkinDate, $checkoutDate]);
+        $stmt = $db->prepare('INSERT INTO Bookings (UserID, PackageID, HotelID, CheckinDate, CheckoutDate, TotalPrice) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$userID, $packageID, $hotelID, $checkinDate, $checkoutDate, $totalPrice]);
 
         // Redirect to a success page or display a success message
         header("Location: booking_success.php");
