@@ -12,6 +12,5 @@ Thumbs.db
 .env
 
 project2/database_queries.sql
-project2/packages.php
 project2/txt.txt
 project2/php/db.php

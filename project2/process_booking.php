@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $packageID = isset($_POST['package']) ? $_POST['package'] : '';
+    $hotelID = isset($_POST['hotel']) ? $_POST['hotel'] : '';
     $checkinDate = isset($_POST['checkin']) ? $_POST['checkin'] : '';
     $checkoutDate = isset($_POST['checkout']) ? $_POST['checkout'] : '';
     $totalPrice = strip_tags($_POST['totalPrice']) ? $_POST['totalPrice'] : '';
-
 
     // Validate the form data 
     if (empty($name) || empty($email) || empty($hotelID) || empty($packageID) || empty($checkinDate) || empty($checkoutDate) || empty($totalPrice)) {
@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: booking_form.php?error=Please fill in all fields");
         exit();
     }
-
 
     try {
         $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);

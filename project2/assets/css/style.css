@@ -2,51 +2,112 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
-  
-}
-
-.tech-plan {
-    width: 80%;
-    margin: 25px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    height: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 10px 10px rgba(243, 187, 82, 0.1);
-    border: none;
-}
-
-h1, h2, h3 {
-    color: #333;
-    margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
+    background-color: #f8f0e3; /* pastel beige */
 }
 
 h2 {
+    color: #6c757d; /* pastel gray */
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
 }
 
-h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); /* drop shadow */
 }
 
-ul, ol {
-    margin-left: 20px;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-li {
-    margin-bottom: 10px;
+input[type="email"], input[type="password"], input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* .div {
-    
-} */
+button {
+    padding: 10px 20px;
+    background-color: #6c757d; /* pastel gray */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a6268; /* darker gray */
+}
+
+p {
+    text-align: center;
+}
+
+/* Style for paragraphs */
+p {
+    color: #6c757d; /* pastel gray */
+    line-height: 1.6;
+}
+
+/* Style for links */
+a {
+    color: #6c757d; /* pastel gray */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a6268; /* darker gray */
+}
+
+/* Style for form elements */
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"], button {
+    padding: 10px 20px;
+    background-color: #6c757d; /* pastel gray */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #5a6268; /* darker gray */
+}
+
+/* Style for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.hotels, .packages, .bookings {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f4f4f4; /* light gray */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); /* drop shadow */
+}

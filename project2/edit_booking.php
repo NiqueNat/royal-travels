@@ -1,4 +1,7 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/ui-ux/projects/project2/php/db.php';
+
+session_start();
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);
@@ -30,14 +33,13 @@ try {
 
     <form action="update_booking.php" method="post">
         <input type="hidden" name="booking_id" value="<?= $booking['BookingID'] ?>">
-        <label for="user_id">User ID:</label>
-        <input type="text" id="user_id" name="user_id" value="<?= $booking['UserID'] ?>">
-        <label for="package_id">Package ID:</label>
-        <input type="text" id="package_id" name="package_id" value="<?= $booking['PackageID'] ?>">
-        <!-- Add other fields as needed -->
+        <label for="check_in_date">Check-In Date:</label>
+        <input type="date" id="check_in_date" name="check_in_date" value="<?= $booking['CheckInDate'] ?>">
+        <label for="check_out_date">Check-Out Date:</label>
+        <input type="date" id="check_out_date" name="check_out_date" value="<?= $booking['CheckOutDate'] ?>">
         <input type="submit" value="Update Booking">
     </form>
 
-    <a href="admin_dashboard.php">Back to Dashboard</a>
+    <a href="<?= $_SESSION['user_type'] === 'Admin' ? 'admin_dashboard.php' : 'user_dashboard.php' ?>">Back to Dashboard</a>
 </body>
 </html>

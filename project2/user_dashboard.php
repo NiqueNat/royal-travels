@@ -1,16 +1,15 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/ui-ux/projects/project2/php/db.php';
-
-session_start(); // Start the session
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Check if the user is logged in
+include_once $_SERVER['DOCUMENT_ROOT'].'/ui-ux/projects/project2/php/db.php';
 
+session_start();
+
+// Check if the user is logged in
 if (!isset($_SESSION['user_type'])) {
-    // If user_type is not set in the session, redirect to login page
+    // If user_type is not set in the session, redirect to the login page
     header("Location: https://myrna67.web582.com/ui-ux/projects/project2/index.php");
     exit();
 } else if ($_SESSION['user_type'] === 'Admin') {
@@ -20,22 +19,19 @@ if (!isset($_SESSION['user_type'])) {
 }
 
 // Fetch and display hotel and package information
-
 try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $dbPassword);
+    $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
     // Fetch hotel information
     $hotelStmt = $db->query('SELECT * FROM Hotels');
     $hotels = $hotelStmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Fetch package information
-    $packageStmt = $db->query('SELECT Packages.*, Hotels.HotelName, Hotels.PricePerNight FROM Packages JOIN Hotels ON Packages.HotelID = Hotels.HotelID');
+    $packageStmt = $db->query('SELECT * FROM Packages');
     $packages = $packageStmt->fetchAll(PDO::FETCH_ASSOC);
-    
+
     // Fetch user's bookings
     $userID = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-
-    echo $_SESSION['user_id'];
 
     if ($userID) {
         $bookingStmt = $db->prepare('SELECT * FROM Bookings WHERE UserID = ?');
@@ -50,6 +46,7 @@ try {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,47 +58,72 @@ try {
 <body>
     <h2>Welcome, User!</h2>
 
+    <div class="hotels">
     <!-- Display hotel information -->
     <h3>Hotel Information</h3>
     <ul>
         <?php foreach ($hotels as $hotel): ?>
             <li>
                 <?= isset($hotel['HotelName']) ? $hotel['HotelName'] : 'N/A' ?> -
-                <?= isset($hotel['Location']) ? $hotel['Location'] : 'N/A' ?> -
+                <?= isset($hotel['HotelLocation']) ? $hotel['HotelLocation'] : 'N/A' ?> -
                 $<?= isset($hotel['PerNightRate']) ? $hotel['PerNightRate'] : 'N/A' ?>
             </li>
         <?php endforeach; ?>
     </ul>
+    </div>
 
- <!-- Display package information -->
-<h3>Package Information</h3>
-<ul>
-    <?php foreach ($packages as $package): ?>
-        <li>
-            <?php echo isset($package['PackageName']) ? $package['PackageName'] : 'N/A' ?> -
-            $<?php echo isset($package['PackagePrice']) ? $package['PackagePrice'] : 'N/A' ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-    <!-- Display user's bookings -->
-    <h3>Your Bookings</h3>
-    <ul>
-        <?php foreach ($bookings as $booking): ?>
-            <li>
-                Booking ID: <?= isset($booking['BookingID']) ? $booking['BookingID'] : 'N/A' ?>
-                Package ID: <?= isset($booking['PackageID']) ? $booking['PackageID'] : 'N/A' ?>
-                Hotel ID: <?= isset($booking['HotelID']) ? $booking['HotelID'] : 'N/A' ?>
-                Check-In Date: <?= isset($booking['CheckInDate']) ? $booking['CheckInDate'] : 'N/A' ?>
-                Check-Out Date: <?= isset($booking['CheckOutDate']) ? $booking['CheckOutDate'] : 'N/A' ?>
-                Total Price: $<?= isset($booking['TotalPrice']) ? $booking['TotalPrice'] : 'N/A' ?>
-            </li>
-
-            
+    <div class="packages">
+    <!-- Display package information -->
+    <h3>Package Information</h3>
+    <table border="1">
+        <tr>
+            <th>Package ID</th>
+            <th>Package Name</th>
+            <th>Package Price</th>
+            <th>Hotel ID</th>
+        </tr>
+        <?php foreach ($packages as $package): ?>
+            <tr>
+                <td><?= $package['PackageID'] ?? 'N/A' ?></td>
+                <td><?= $package['PackageName'] ?? 'N/A' ?></td>
+                <td><?= $package['PackagePrice'] ?? 'N/A' ?></td>
+                <td><?= $package['HotelID'] ?? 'N/A' ?></td>
+            </tr>
         <?php endforeach; ?>
-    </ul>
+    </table>
+</div>
+    
+<div class="bookings">
+   <!-- Display user's bookings -->
+<h3>Your Bookings</h3>
+<table border="1">
+    <tr>
+        <th>Booking ID</th>
+        <th>Package ID</th>
+        <th>Hotel ID</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
+        <th>Total Price</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($bookings as $booking): ?>
+        <tr>
+            <td><?= $booking['BookingID'] ?? 'N/A' ?></td>
+            <td><?= $booking['PackageID'] ?? 'N/A' ?></td>
+            <td><?= $booking['HotelID'] ?? 'N/A' ?></td>
+            <td><?= $booking['CheckInDate'] ?? 'N/A' ?></td>
+            <td><?= $booking['CheckOutDate'] ?? 'N/A' ?></td>
+            <td>$<?= $booking['TotalPrice'] ?? 'N/A' ?></td>
+            <td>
+                <a href="edit_booking.php?booking_id=<?= $booking['BookingID'] ?>">Edit</a> |
+                <a href="cancel_booking.php?booking_id=<?= $booking['BookingID'] ?>">Cancel</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+</div>
 
-    <?php if (!empty($bookings)): ?>
+<?php if (!empty($bookings)): ?>
     <table>
         <tr>
             <th>Booking ID</th>
@@ -110,16 +132,16 @@ try {
         </tr>
         <?php foreach ($bookings as $booking): ?>
             <tr>
-                <td><?php echo htmlspecialchars($booking['BookingID']); ?></td>
-                <td><?php echo htmlspecialchars($booking['PackageID']); ?></td>
-                <td><?php echo htmlspecialchars($booking['HotelID']); ?></td>
+                <td><?= isset($booking['BookingID']) ? htmlspecialchars($booking['BookingID']) : 'N/A' ?></td>
+                <td><?= isset($booking['PackageID']) ? htmlspecialchars($booking['PackageID']) : 'N/A' ?></td>
+                <td><?= isset($booking['HotelID']) ? htmlspecialchars($booking['HotelID']) : 'N/A' ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
 <?php else: ?>
     <p>No bookings found.</p>
 <?php endif; ?>
-
-    <a href="https://myrna67.web582.com/ui-ux/projects/project2/logout.php">Logout</a>
+        <br>
+    <button><a href="https://myrna67.web582.com/ui-ux/projects/project2/logout.php">Logout</a></button>
 </body>
 </html>
