@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://myrna67.web582.com/ui-ux/projects/project2/assets/css/style.css">
 </head>
 <body>
+<div class="container">
     <div>
         <h2>Tourist Login</h2>
         <form action="login.php" method="post">
@@ -38,6 +39,7 @@
 
     <div id="register">
     <h2>Register</h2>
+   
     <form action="process_registration.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -56,6 +58,8 @@
             <br>
             <button type="submit">Register</button>
     </form>
+
+</div>
 </div>
 </body>
 </html>

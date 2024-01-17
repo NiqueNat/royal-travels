@@ -49,6 +49,7 @@ $packages = $packageStmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h2>Booking Form</h2>
+    <div class="container">
     <form action="process_booking.php" method="post">
     <label for="package">Select a Package:</label>
 <select id="package" name="package" required>
@@ -99,5 +100,6 @@ totalCostInputField.value = totalCost;
 
     <br>
     <a href="https://myrna67.web582.com/ui-ux/projects/project2/user_dashboard.php">Back to Dashboard</a>
+    </div>
 </body>
 </html>

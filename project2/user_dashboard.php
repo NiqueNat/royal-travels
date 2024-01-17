@@ -58,6 +58,7 @@ try {
 <body>
     <h2>Welcome, User!</h2>
 
+    <div class="container">
     <div class="hotels">
     <!-- Display hotel information -->
     <h3>Hotel Information</h3>
@@ -143,5 +144,6 @@ try {
 <?php endif; ?>
         <br>
     <button><a href="https://myrna67.web582.com/ui-ux/projects/project2/logout.php">Logout</a></button>
+    </div>
 </body>
 </html>

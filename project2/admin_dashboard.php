@@ -48,7 +48,7 @@ try {
 
 <body>
     <h2>Welcome, Admin!</h2>
-
+<div class="container">
     <div class="hotels">
         <!-- Display hotel information -->
         <h3>Hotel Information</h3>
@@ -115,6 +115,7 @@ try {
     </table>
 
     <button><a href="https://myrna67.web582.com/ui-ux/projects/project2/logout.php">Logout</a></button>
+        </div>
 </body>
 
 </html>

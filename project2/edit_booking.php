@@ -30,7 +30,7 @@ try {
 </head>
 <body>
     <h2>Edit Booking</h2>
-
+    <div class="container">
     <form action="update_booking.php" method="post">
         <input type="hidden" name="booking_id" value="<?= $booking['BookingID'] ?>">
         <label for="check_in_date">Check-In Date:</label>
@@ -41,5 +41,6 @@ try {
     </form>
 
     <a href="<?= $_SESSION['user_type'] === 'Admin' ? 'admin_dashboard.php' : 'user_dashboard.php' ?>">Back to Dashboard</a>
+    </div>
 </body>
 </html>
