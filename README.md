@@ -140,3 +140,27 @@ Through a combination of PHP, PDO, and secure session management, the platform e
 
 Thank you,
 Myrna Dominique
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/00b0d64a-a142-412f-a459-2748f6bfa0e3)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/55a70182-6b81-4e32-b676-e5860a648146)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/2ace771e-2456-48bb-a60e-b506ebffdc85)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/56b5b86f-505f-43eb-ba21-f0904dfc9d3a)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/002c513d-b88f-40c0-8f86-e1e9c8d08f6c)
+
+ADMIN
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/7f9a6df5-b8cb-4b5e-9fff-1813fb0cd915)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/acfa7538-1e78-42b6-8e5b-701b1df85091)
+
+![image](https://github.com/NiqueNat/royal-travels/assets/70446500/4b4ef638-c404-462b-8ded-fcd7ed95cf8f)
+
+
+
+
+
+
+
