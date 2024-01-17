@@ -108,7 +108,7 @@ I'm not confident that the Packages table is set up correctly. This could also b
 
 CASE STUDY AND VISUAL UPDATES
 
-Royal Travels - Backend Excellence in Travel Booking(What it code be, maybe will be)..
+Royal Travels - Backend Excellence in Travel Booking(What it could be, maybe will be)..
 Introduction
 Royal Travels stands out not only for its user-friendly frontend but also for the robust and efficient backend that powers the entire travel booking platform. In this case study, we delve into the backend architecture, database management, and the seamless integration that ensures a smooth user experience.
 
